@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronDown, Play, CheckCircle, Clock, Video, FileText, Download, Smartphone, Award, Gift, Star } from 'lucide-react';
+import { ChevronDown, Play, CheckCircle, Clock, Video, FileText, Download, Smartphone, Award, Star } from 'lucide-react';
 
 const Course = () => {
   return (

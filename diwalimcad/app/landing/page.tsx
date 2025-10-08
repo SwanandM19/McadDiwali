@@ -115,7 +115,7 @@ const Landing = () => {
           <p className="text-gray-600 mb-6">
             At DesignVerse, we are committed to providing the highest quality education and support to 
             help you achieve your design goals. Our courses are designed to be engaging, practical, and 
-            relevant to the industry's demands.
+            relevant to the industry&apos;s demands.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
@@ -137,9 +137,9 @@ const Landing = () => {
         <h2 className="text-2xl font-bold mb-6">Testimonials</h2>
         <div className="space-y-6 mb-12">
           {[
-            { name: 'Ethan Clarke', role: 'UI/UX Designer', rating: 5, text: 'DesignVerse transformed my career! The AutoCAD Essentials course was incredibly comprehensive and easy to follow. The instructor\'s expertise and the hands-on projects helped me gain the confidence to tackle real-world design challenges. I highly recommend DesignVerse to anyone looking to enhance their design skills.' },
+            { name: 'Ethan Clarke', role: 'UI/UX Designer', rating: 5, text: 'DesignVerse transformed my career! The AutoCAD Essentials course was incredibly comprehensive and easy to follow. The instructor&apos;s expertise and the hands-on projects helped me gain the confidence to tackle real-world design challenges. I highly recommend DesignVerse to anyone looking to enhance their design skills.' },
             { name: 'Olivia Bennett', role: 'Interior Designer', rating: 4, text: 'I took the Advanced 3D Modeling course and was impressed with the depth of the content. The projects were challenging but rewarding, and the instructor provided excellent feedback. While the course was demanding, it significantly improved my 3D modeling abilities.' },
-            { name: 'Noah Foster', role: 'Architect', rating: 5, text: 'The Architectural Design with Software course exceeded my expectations. The curriculum was well-structured, and the projects were relevant to the industry. The instructor\'s guidance and the support from the DesignVerse team were invaluable. I now feel more confident in my ability to design and visualize architectural projects.' }
+            { name: 'Noah Foster', role: 'Architect', rating: 5, text: 'The Architectural Design with Software course exceeded my expectations. The curriculum was well-structured, and the projects were relevant to the industry. The instructor&apos;s guidance and the support from the DesignVerse team were invaluable. I now feel more confident in my ability to design and visualize architectural projects.' }
           ].map((testimonial, idx) => (
             <div key={idx} className="bg-white rounded-lg shadow-md p-6">
               <div className="flex items-start">

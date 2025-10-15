@@ -73,6 +73,7 @@ interface CoursesData {
 
 import { useRouter, useParams } from 'next/navigation';
 import { ChevronDown, ChevronUp, Play, CheckCircle, Clock, Video, FileText, Download, Smartphone, Award, Star, ArrowLeft, Globe, Lock, ExternalLink, Phone, X } from 'lucide-react';
+import Image from 'next/image';
 
 
 // Course data with real YouTube videos
@@ -95,10 +96,10 @@ const coursesData: CoursesData = {
         bio: 'Our expert instructors bring over 13 years of automotive industry experience in CATIA V5 design and development. Specialized in training mechanical engineers for core industry roles with hands-on project-based learning approach.'
       }
     ],
-    price: '₹3,092',
-    originalPrice: '₹9,542',
-    discount: '70% OFF',
-    lastUpdated: '10/2024',
+    price: '₹4,999',
+    originalPrice: '₹9,999',
+    discount: '50% OFF',
+    lastUpdated: '10/2025',
     language: 'English',
     subtitles: ['English', 'Hindi'],
     duration: '49h 18m',
@@ -471,10 +472,10 @@ You'll learn everything from basic sketching to advanced surface modeling, prepa
     rating: 4.9,
     reviews: 89,
     students: 450,
-    price: '₹20,009',
-    originalPrice: '₹35,010',
-    discount: '43% OFF',
-    lastUpdated: '09/2024',
+    price: '₹20,999',
+    originalPrice: '₹39,999',
+    discount: '53% OFF',
+    lastUpdated: '09/2025',
     language: 'English',
     subtitles: ['English', 'Hindi'],
     duration: '38+ hours',
@@ -894,9 +895,9 @@ The course includes comprehensive coverage of all fixture types: rest units, cla
     rating: 4.8,
     reviews: 92,
     students: 520,
-    price: '₹13,009',
-    originalPrice: '₹25,010',
-    discount: '48% OFF',
+    price: '₹15,999',
+    originalPrice: '₹31,999',
+    discount: '50% OFF',
     lastUpdated: '09/2024',
     language: 'English',
     subtitles: ['English', 'Hindi', 'Marathi'],
@@ -1226,10 +1227,10 @@ The course covers complete drafting workflow from detail drawings to assembly do
   rating: 4.6,
   reviews: 203,
   students: 1450,
-  price: '₹2,509',
-  originalPrice: '₹10,010',
-  discount: '75% OFF',
-  lastUpdated: '10/2024',
+  price: '₹4,999',
+  originalPrice: '₹9,999',
+  discount: '50% OFF',
+  lastUpdated: '10/2025',
   language: 'Marathi',
   subtitles: ['Marathi', 'Hindi', 'English'],
   duration: '45+ hours',
@@ -1753,476 +1754,478 @@ const CoursePage: React.FC = () => {
   };
 
   const handlePhoneCall = (): void => {
-    window.location.href = 'tel:+917030999500';
+    window.location.href = 'tel:+919172969859';
   };
 
   const handleWhatsApp = (): void => {
-    window.open('https://wa.me/917030999500?text=Hi, I want to enroll in ' + course.title, '_blank');
+    window.open('https://wa.me/+919172969859?text=Hi, I want to enroll in ' + course.title, '_blank');
   };
 
-  return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Video Player Modal */}
-      {playingVideo && (
-        <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-lg overflow-hidden max-w-5xl w-full">
-            <div className="flex justify-between items-center p-4 border-b">
-              <h3 className="font-bold text-lg">{playingVideo.title}</h3>
-              <button 
-                onClick={() => setPlayingVideo(null)}
-                className="text-gray-500 hover:text-gray-700"
-              >
-                <X className="w-6 h-6" />
-              </button>
-            </div>
-            <div className="aspect-video">
-              <iframe
-                width="100%"
-                height="100%"
-                src={`https://www.youtube.com/embed/${playingVideo.videoId}?autoplay=1`}
-                title={playingVideo.title}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
-            <div className="p-4 bg-gray-50">
-              <p className="text-sm text-gray-700">{playingVideo.description}</p>
-              <div className="mt-3 flex gap-2">
-                <a 
-                  href={course.youtubeChannel} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-sm text-orange-600 hover:underline flex items-center gap-1"
-                >
-                  <ExternalLink className="w-4 h-4" />
-                  Watch more on YouTube
-                </a>
-              </div>
-            </div>
+return (
+  <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    {/* Video Player Modal - DARK MODE */}
+    {playingVideo && (
+      <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4">
+        <div className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden max-w-5xl w-full">
+          <div className="flex justify-between items-center p-4 border-b dark:border-gray-700">
+            <h3 className="font-bold text-base md:text-lg dark:text-white">{playingVideo.title}</h3>
+            <button 
+              onClick={() => setPlayingVideo(null)}
+              className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+            >
+              <X className="w-6 h-6" />
+            </button>
           </div>
-        </div>
-      )}
-
-      {/* Navigation */}
-      <nav className="bg-gray-900 text-white sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-8">
-              <button 
-                onClick={() => router.push('/landing')}
-                className="flex items-center space-x-2 text-orange-400 hover:text-orange-300 transition"
+          <div className="aspect-video">
+            <iframe
+              width="100%"
+              height="100%"
+              src={`https://www.youtube.com/embed/${playingVideo.videoId}?autoplay=1`}
+              title={playingVideo.title}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+          <div className="p-4 bg-gray-50 dark:bg-gray-700">
+            <p className="text-sm text-gray-700 dark:text-gray-300">{playingVideo.description}</p>
+            <div className="mt-3 flex gap-2">
+              <a 
+                href={course.youtubeChannel} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-sm text-orange-600 dark:text-orange-400 hover:underline flex items-center gap-1"
               >
-                <ArrowLeft className="w-5 h-5" />
-                <span>Back to Courses</span>
-              </button>
-              <span className="text-xl font-bold">M CAD Solutions</span>
-            </div>
-            <div className="hidden md:flex items-center space-x-6">
-              <a href={course.youtubeChannel} target="_blank" rel="noopener noreferrer" className="hover:text-gray-300 text-sm">
-                Free Videos
+                <ExternalLink className="w-4 h-4" />
+                Watch more on YouTube
               </a>
-              <button onClick={handlePhoneCall} className="border border-white px-4 py-2 rounded hover:bg-gray-800 text-sm">
-                +91 7030999500
-              </button>
-              <button className="bg-orange-600 text-white px-6 py-2 rounded hover:bg-orange-700 cursor-not-allowed opacity-70">
-                Enroll Now
-              </button>
             </div>
           </div>
         </div>
-      </nav>
+      </div>
+    )}
 
-      {/* Course Header */}
-      <header className="bg-gray-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-48">
-          <div className="lg:w-7/12">
-            <div className="text-sm mb-4 text-orange-400">
-              {course.category.map((cat, idx) => (
-                <span key={idx}>
-                  <span>{cat}</span>
-                  {idx < course.category.length - 1 && <span> &gt; </span>}
-                </span>
-              ))}
-            </div>
-            <h1 className="text-3xl lg:text-4xl font-bold mb-4">
-              {course.title}
-            </h1>
-            <p className="text-gray-300 mb-4 text-lg">
-              {course.subtitle}
-            </p>
-            <div className="flex items-center gap-4 mb-4 flex-wrap">
-              {course.bestseller && (
-                <span className="bg-yellow-400 text-gray-900 px-2 py-1 text-xs font-bold rounded">Bestseller</span>
-              )}
-              <div className="flex items-center gap-2">
-                <span className="text-yellow-400 font-bold">{course.rating}</span>
-                <div className="flex">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className={`w-4 h-4 ${i < Math.floor(course.rating) ? 'text-yellow-400 fill-current' : 'text-gray-400'}`} />
-                  ))}
-                </div>
-                <span className="text-orange-400 underline">({course.reviews} ratings)</span>
-                <span>{course.students?.toLocaleString()} students</span>
-              </div>
-            </div>
-            {course.freeVideosAvailable && (
-              <div className="bg-green-600 bg-opacity-20 border border-green-400 rounded-lg px-4 py-2 mb-4 inline-block">
-                <span className="text-green-300 text-sm font-semibold">
-                  🎁 {course.freeVideosAvailable} Free Preview Videos Available!
-                </span>
-              </div>
+    {/* Navigation - DARK MODE */}
+    <nav className="bg-gray-900 dark:bg-gray-950 text-white sticky top-0 z-40">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          <div className="flex items-center space-x-4 md:space-x-8">
+            <button 
+              onClick={() => router.push('/')}
+              className="flex items-center space-x-2 text-orange-400 hover:text-orange-300 transition text-sm md:text-base"
+            >
+              <ArrowLeft className="w-4 h-4 md:w-5 md:h-5" />
+              <span>Back to Courses</span>
+            </button>
+            <span className="text-lg md:text-xl font-bold hidden sm:inline">M CAD Solutions</span>
+          </div>
+          <div className="flex items-center space-x-3 md:space-x-6">
+            <a href={course.youtubeChannel} target="_blank" rel="noopener noreferrer" className="hover:text-gray-300 text-xs md:text-sm hidden sm:inline">
+              Free Videos
+            </a>
+            <button onClick={handlePhoneCall} className="border border-white px-3 py-1.5 md:px-4 md:py-2 rounded hover:bg-gray-800 text-xs md:text-sm">
+              +91 9172969859
+            </button>
+            <button className="bg-orange-600 text-white px-4 py-1.5 md:px-6 md:py-2 rounded   text-xs md:text-sm">
+              Enroll Now (Org Code : ECWYN)
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    {/* Course Header - DARK MODE */}
+    <header className="bg-gray-900 dark:bg-gray-950 text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 md:pt-8 pb-32 md:pb-48">
+        <div className="lg:w-7/12">
+          <div className="text-xs md:text-sm mb-3 md:mb-4 text-orange-400">
+            {course.category.map((cat, idx) => (
+              <span key={idx}>
+                <span>{cat}</span>
+                {idx < course.category.length - 1 && <span> &gt; </span>}
+              </span>
+            ))}
+          </div>
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4">
+            {course.title}
+          </h1>
+          <p className="text-gray-300 mb-3 md:mb-4 text-base md:text-lg">
+            {course.subtitle}
+          </p>
+          <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4 flex-wrap">
+            {course.bestseller && (
+              <span className="bg-yellow-400 text-gray-900 px-2 py-1 text-xs font-bold rounded">Bestseller</span>
             )}
-            <div className="text-sm text-gray-300">
-              Created by <span className="text-orange-400">M CAD Solutions</span>
-            </div>
-            <div className="flex items-center gap-4 mt-2 text-sm text-gray-300 flex-wrap">
-              <span>● Last updated {course.lastUpdated}</span>
-              <span className="flex items-center gap-1"><Globe className="w-4 h-4" /> {course.language}</span>
-              {course.subtitles && <span>Subtitles: {course.subtitles.join(', ')}</span>}
-            </div>
-          </div>
-        </div>
-      </header>
-
-      {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-40">
-        <div className="lg:flex lg:gap-8 items-start">
-          
-          {/* Left Column */}
-          <div className="flex-1 min-w-0">
-            {/* What you'll learn */}
-            <div className="bg-white rounded-lg shadow-md p-8 mb-8">
-              <h2 className="text-2xl font-bold mb-6">What you will learn</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {course.whatYouLearn?.map((item, idx) => (
-                  <div key={idx} className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm">{item}</span>
-                  </div>
+            <div className="flex items-center gap-2">
+              <span className="text-yellow-400 font-bold text-sm md:text-base">{course.rating}</span>
+              <div className="flex">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className={`w-3 h-3 md:w-4 md:h-4 ${i < Math.floor(course.rating) ? 'text-yellow-400 fill-current' : 'text-gray-400'}`} />
                 ))}
               </div>
+              <span className="text-orange-400 underline text-xs md:text-sm">({course.reviews} ratings)</span>
+              <span className="text-xs md:text-sm">{course.students?.toLocaleString()} students</span>
             </div>
+          </div>
+          {course.freeVideosAvailable && (
+            <div className="bg-green-600 bg-opacity-20 border border-green-400 rounded-lg px-3 md:px-4 py-2 mb-3 md:mb-4 inline-block">
+              <span className="text-green-300 text-xs md:text-sm font-semibold">
+                🎁 {course.freeVideosAvailable} Free Preview Videos Available!
+              </span>
+            </div>
+          )}
+          <div className="text-xs md:text-sm text-gray-300">
+            Created by <span className="text-orange-400">M CAD Solutions</span>
+          </div>
+          <div className="flex items-center gap-3 md:gap-4 mt-2 text-xs md:text-sm text-gray-300 flex-wrap">
+            <span>● Last updated {course.lastUpdated}</span>
+            <span className="flex items-center gap-1"><Globe className="w-3 h-3 md:w-4 md:h-4" /> {course.language}</span>
+            {course.subtitles && <span className="hidden sm:inline">Subtitles: {course.subtitles.join(', ')}</span>}
+          </div>
+        </div>
+      </div>
+    </header>
 
-            {/* Course Content */}
-            <div className="bg-white rounded-lg shadow-md p-8 mb-8">
-              <div className="flex justify-between items-center mb-6">
-                <h2 className="text-2xl font-bold">Course content</h2>
-                <button 
-                  onClick={() => setExpandedSection(expandedSection === null ? 0 : null)}
-                  className="text-orange-600 hover:underline text-sm font-semibold"
-                >
-                  {expandedSection === null ? 'Expand all' : 'Collapse all'}
-                </button>
-              </div>
-              <div className="text-sm text-gray-600 mb-4">
-                {course.sections?.length} sections • {course.videos} lectures • {course.duration} total length
-              </div>
-              
-              <div className="border rounded-lg divide-y">
-                {course.sections?.map((section, sectionIdx) => (
-                  <div key={sectionIdx}>
-                    <button
-                      onClick={() => toggleSection(sectionIdx)}
-                      className="w-full p-4 hover:bg-gray-50 transition flex justify-between items-center text-left"
-                    >
-                      <div className="flex items-center gap-3 flex-1">
-                        {expandedSection === sectionIdx ? (
-                          <ChevronUp className="w-5 h-5 flex-shrink-0" />
-                        ) : (
-                          <ChevronDown className="w-5 h-5 flex-shrink-0" />
-                        )}
-                        <span className="font-semibold">{section.title}</span>
-                      </div>
-                      <span className="text-sm text-gray-600">{section.lectures} lectures • {section.duration}</span>
-                    </button>
-                    
-                    {expandedSection === sectionIdx && section.lessons && (
-                      <div className="bg-gray-50 divide-y">
-                        {section.lessons.map((lesson, lessonIdx) => (
-                          <div 
-                            key={lessonIdx} 
-                            className={`p-4 ${lesson.free && lesson.videoId ? 'cursor-pointer hover:bg-gray-100' : ''}`}
-                            onClick={() => lesson.free && lesson.videoId && handleVideoClick(lesson)}
-                          >
-                            <div className="flex justify-between items-start gap-4">
-                              <div className="flex items-start gap-3 flex-1">
-                                {lesson.locked ? (
-                                  <Lock className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
-                                ) : (
-                                  <Play className="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" />
-                                )}
-                                <div className="flex-1">
-                                  <div className="flex items-center gap-2 mb-1">
-                                    <span className="text-sm font-medium">{lesson.title}</span>
-                                    {lesson.free && (
-                                      <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded font-semibold">
-                                        FREE PREVIEW
-                                      </span>
-                                    )}
-                                  </div>
-                                  {lesson.description && (
-                                    <p className="text-xs text-gray-600 mt-1">{lesson.description}</p>
-                                  )}
-                                  {lesson.free && lesson.videoId && (
-                                    <div className="mt-2">
-                                      <img 
-                                        src={lesson.thumbnail} 
-                                        alt={lesson.title}
-                                        className="w-full max-w-xs rounded border border-gray-200 hover:border-orange-400 transition"
-                                      />
-                                    </div>
+    {/* Main Content - DARK MODE */}
+    <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-24 md:-mt-40">
+      <div className="lg:flex lg:gap-8 items-start">
+        
+        {/* Left Column */}
+        <div className="flex-1 min-w-0 mb-6 lg:mb-0">
+          {/* What you'll learn - DARK MODE */}
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 md:p-8 mb-6 md:mb-8">
+            <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 dark:text-white">What you will learn</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+              {course.whatYouLearn?.map((item, idx) => (
+                <div key={idx} className="flex items-start gap-3">
+                  <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-orange-600 dark:text-orange-400 flex-shrink-0 mt-0.5" />
+                  <span className="text-xs md:text-sm dark:text-gray-300">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Course Content - DARK MODE */}
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 md:p-8 mb-6 md:mb-8">
+            <div className="flex justify-between items-center mb-4 md:mb-6">
+              <h2 className="text-xl md:text-2xl font-bold dark:text-white">Course content</h2>
+              <button 
+                onClick={() => setExpandedSection(expandedSection === null ? 0 : null)}
+                className="text-orange-600 dark:text-orange-400 hover:underline text-xs md:text-sm font-semibold"
+              >
+                {expandedSection === null ? 'Expand all' : 'Collapse all'}
+              </button>
+            </div>
+            <div className="text-xs md:text-sm text-gray-600 dark:text-gray-400 mb-4">
+              {course.sections?.length} sections • {course.videos} lectures • {course.duration} total length
+            </div>
+            
+            <div className="border dark:border-gray-700 rounded-lg divide-y dark:divide-gray-700">
+              {course.sections?.map((section, sectionIdx) => (
+                <div key={sectionIdx}>
+                  <button
+                    onClick={() => toggleSection(sectionIdx)}
+                    className="w-full p-3 md:p-4 hover:bg-gray-50 dark:hover:bg-gray-700 transition flex justify-between items-center text-left"
+                  >
+                    <div className="flex items-center gap-2 md:gap-3 flex-1">
+                      {expandedSection === sectionIdx ? (
+                        <ChevronUp className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0 dark:text-gray-300" />
+                      ) : (
+                        <ChevronDown className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0 dark:text-gray-300" />
+                      )}
+                      <span className="font-semibold text-xs md:text-base dark:text-white">{section.title}</span>
+                    </div>
+                    <span className="text-xs md:text-sm text-gray-600 dark:text-gray-400">{section.lectures} lectures • {section.duration}</span>
+                  </button>
+                  
+                  {expandedSection === sectionIdx && section.lessons && (
+                    <div className="bg-gray-50 dark:bg-gray-700 divide-y dark:divide-gray-600">
+                      {section.lessons.map((lesson, lessonIdx) => (
+                        <div 
+                          key={lessonIdx} 
+                          className={`p-3 md:p-4 ${lesson.free && lesson.videoId ? 'cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600' : ''}`}
+                          onClick={() => lesson.free && lesson.videoId && handleVideoClick(lesson)}
+                        >
+                          <div className="flex justify-between items-start gap-4">
+                            <div className="flex items-start gap-2 md:gap-3 flex-1">
+                              {lesson.locked ? (
+                                <Lock className="w-4 h-4 md:w-5 md:h-5 text-gray-400 dark:text-gray-500 flex-shrink-0 mt-0.5" />
+                              ) : (
+                                <Play className="w-4 h-4 md:w-5 md:h-5 text-orange-600 dark:text-orange-400 flex-shrink-0 mt-0.5" />
+                              )}
+                              <div className="flex-1">
+                                <div className="flex items-center gap-2 mb-1 flex-wrap">
+                                  <span className="text-xs md:text-sm font-medium dark:text-white">{lesson.title}</span>
+                                  {lesson.free && (
+                                    <span className="text-xs bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 px-2 py-0.5 rounded font-semibold">
+                                      FREE PREVIEW
+                                    </span>
                                   )}
                                 </div>
+                                {lesson.description && (
+                                  <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">{lesson.description}</p>
+                                )}
+                                {lesson.free && lesson.videoId && lesson.thumbnail && (
+                                  <div className="mt-2">
+                                    <Image 
+                                      src={lesson.thumbnail} 
+                                      alt={lesson.title}
+                                      width={320}
+                                      height={180}
+                                      className="w-full max-w-xs rounded border border-gray-200 dark:border-gray-600 hover:border-orange-400 dark:hover:border-orange-400 transition"
+                                    />
+                                  </div>
+                                )}
                               </div>
-                              <span className="text-sm text-gray-600 flex-shrink-0">{lesson.duration}</span>
                             </div>
+                            <span className="text-xs md:text-sm text-gray-600 dark:text-gray-400 flex-shrink-0">{lesson.duration}</span>
                           </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-
-              {/* YouTube Channel Link */}
-              {course.youtubeChannel && (
-                <div className="mt-6 p-4 bg-orange-50 rounded-lg border border-orange-200">
-                  <div className="flex items-center gap-3">
-                    <Video className="w-6 h-6 text-orange-600" />
-                    <div className="flex-1">
-                      <p className="font-semibold text-gray-900">Want more free content?</p>
-                      <p className="text-sm text-gray-600">Subscribe to our YouTube channel for more tutorials</p>
-                    </div>
-                    <a
-                      href={course.youtubeChannel}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-orange-600 text-white px-4 py-2 rounded hover:bg-orange-700 transition text-sm font-semibold flex items-center gap-2"
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                      YouTube Channel
-                    </a>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Requirements */}
-            <div className="bg-white rounded-lg shadow-md p-8 mb-8">
-              <h2 className="text-2xl font-bold mb-4">Requirements</h2>
-              <ul className="list-disc list-inside space-y-2 text-gray-700">
-                {course.requirements?.map((req, idx) => (
-                  <li key={idx}>{req}</li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Description */}
-            <div className="bg-white rounded-lg shadow-md p-8 mb-8">
-              <h2 className="text-2xl font-bold mb-4">Description</h2>
-              {course.description?.split('\n\n').map((para, idx) => (
-                <p key={idx} className="text-gray-700 mb-4">{para}</p>
-              ))}
-            </div>
-
-            {/* Instructors */}
-            <div className="bg-white rounded-lg shadow-md p-8 mb-8">
-              <h2 className="text-2xl font-bold mb-6">Instructors</h2>
-              
-              {course.instructors?.map((instructor, idx) => (
-                <div key={idx} className="mb-8 last:mb-0">
-                  <h3 className="text-orange-600 text-lg font-semibold">{instructor.name}</h3>
-                  <p className="text-gray-600 text-sm mb-4">{instructor.title}</p>
-                  <div className="flex items-start gap-4">
-                    <div className="w-24 h-24 bg-gradient-to-br from-orange-400 to-blue-500 rounded-full flex-shrink-0 flex items-center justify-center text-white text-3xl font-bold">
-                      {instructor.name.charAt(0)}
-                    </div>
-                    <div className="flex-1">
-                      <div className="grid grid-cols-2 gap-2 text-sm mb-4">
-                        <div className="flex items-center gap-2">
-                          <Star className="w-4 h-4 text-yellow-400" />
-                          <span>{instructor.rating} Instructor Rating</span>
                         </div>
-                        <div className="flex items-center gap-2">
-                          <Award className="w-4 h-4" />
-                          <span>{instructor.reviewCount?.toLocaleString()} Reviews</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <Video className="w-4 h-4" />
-                          <span>{instructor.studentCount?.toLocaleString()} Students</span>
-                        </div>
-                        {instructor.courseCount && (
-                          <div className="flex items-center gap-2">
-                            <Play className="w-4 h-4" />
-                            <span>{instructor.courseCount} Courses</span>
-                          </div>
-                        )}
-                      </div>
-                      <p className="text-gray-700 text-sm">
-                        {instructor.bio}
-                      </p>
+                      ))}
                     </div>
-                  </div>
+                  )}
                 </div>
               ))}
             </div>
 
-            {/* Reviews */}
-            <div className="bg-white rounded-lg shadow-md p-8 mb-8">
-              <div className="flex items-center gap-4 mb-6">
-                <Star className="w-8 h-8 text-yellow-400 fill-current" />
-                <h2 className="text-2xl font-bold">{course.rating} course rating • {course.reviews} ratings</h2>
-              </div>
-
-              <h3 className="font-semibold mb-6">Student Reviews</h3>
-              
-              <div className="space-y-6">
-                <div className="border-b pb-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-orange-400 to-blue-500 rounded-full flex-shrink-0 flex items-center justify-center text-white font-bold">
-                      R
-                    </div>
-                    <div className="flex-1">
-                      <span className="font-semibold">Rahul P.</span>
-                      <div className="flex items-center gap-2 my-2">
-                        {[...Array(5)].map((_, i) => (<Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />))}
-                        <span className="text-sm text-gray-600">2 weeks ago</span>
-                      </div>
-                      <p className="text-gray-700 text-sm">
-                        Excellent course by M CAD Solutions! The free preview videos helped me understand the teaching style. The instructors are industry experts and the practical projects really helped me. Got placed in a leading automotive company within 2 months. Highly recommended!
-                      </p>
-                    </div>
+            {/* YouTube Channel Link - DARK MODE */}
+            {course.youtubeChannel && (
+              <div className="mt-4 md:mt-6 p-3 md:p-4 bg-orange-50 dark:bg-orange-900/20 rounded-lg border border-orange-200 dark:border-orange-800">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+                  <Video className="w-5 h-5 md:w-6 md:h-6 text-orange-600 dark:text-orange-400 flex-shrink-0" />
+                  <div className="flex-1">
+                    <p className="font-semibold text-gray-900 dark:text-white text-sm md:text-base">Want more free content?</p>
+                    <p className="text-xs md:text-sm text-gray-600 dark:text-gray-300">Subscribe to our YouTube channel for more tutorials</p>
                   </div>
-                </div>
-
-                <div className="border-b pb-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-orange-400 to-blue-500 rounded-full flex-shrink-0 flex items-center justify-center text-white font-bold">
-                      P
-                    </div>
-                    <div className="flex-1">
-                      <span className="font-semibold">Priya S.</span>
-                      <div className="flex items-center gap-2 my-2">
-                        {[...Array(5)].map((_, i) => (<Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />))}
-                        <span className="text-sm text-gray-600">1 month ago</span>
-                      </div>
-                      <p className="text-gray-700 text-sm">
-                        The course content is very well structured and covers everything from basics to advanced topics. The video thumbnails and descriptions helped me choose the right course. The lifetime access and doubt-solving support is a great feature!
-                      </p>
-                    </div>
-                  </div>
+                  <a
+                    href={course.youtubeChannel}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-orange-600 text-white px-3 md:px-4 py-2 rounded hover:bg-orange-700 transition text-xs md:text-sm font-semibold flex items-center gap-2 w-full sm:w-auto justify-center"
+                  >
+                    <ExternalLink className="w-3 h-3 md:w-4 md:h-4" />
+                    YouTube Channel
+                  </a>
                 </div>
               </div>
-            </div>
+            )}
           </div>
 
-          {/* Right Column - Sticky Card */}
-          <div className="lg:w-96 lg:sticky lg:top-24 space-y-6 flex-shrink-0">
-            <div className="bg-white rounded-lg shadow-xl overflow-hidden">
-              <div className="relative h-56 bg-gradient-to-br from-orange-500 to-blue-600 flex items-center justify-center">
-                <div className="text-center text-white p-8">
-                  <h3 className="text-2xl font-bold mb-2">{course.title.split(' - ')[0]}</h3>
-                  <p className="text-sm">{course.language} • {course.access}</p>
-                </div>
-              </div>
-              <div className="p-6">
-                <div className="mb-4">
-                  <div className="text-3xl font-bold text-gray-900">{course.price}</div>
-                  <div className="text-gray-500 line-through">{course.originalPrice}</div>
-                  <div className="text-red-500 font-semibold">{course.discount}</div>
-                </div>
-                <div className="text-red-500 text-sm font-semibold mb-4">⏰ Limited time offer!</div>
-                
-                <button 
-                  className="w-full bg-gray-400 text-white py-3 rounded font-semibold mb-2 cursor-not-allowed opacity-70"
-                  disabled
-                >
-                  Enroll Now (Coming Soon)
-                </button>
-                
-                <button 
-                  onClick={handleWhatsApp}
-                  className="w-full bg-green-500 text-white py-3 rounded font-semibold hover:bg-green-600 transition mb-2"
-                >
-                  Contact on WhatsApp
-                </button>
-                
-                <button 
-                  onClick={handlePhoneCall}
-                  className="w-full border border-gray-900 text-gray-900 py-3 rounded font-semibold hover:bg-gray-50 transition"
-                >
-                  Call: +91 7030999500
-                </button>
-                
-                <div className="text-center text-sm text-gray-500 mt-2">100% Money-Back Guarantee</div>
+          {/* Requirements - DARK MODE */}
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 md:p-8 mb-6 md:mb-8">
+            <h2 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 dark:text-white">Requirements</h2>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300 text-sm md:text-base">
+              {course.requirements?.map((req, idx) => (
+                <li key={idx}>{req}</li>
+              ))}
+            </ul>
+          </div>
 
-                <div className="mt-6">
-                  <h4 className="font-semibold mb-3 text-gray-900">This course includes:</h4>
-                  <div className="space-y-2 text-sm text-gray-700">
-                    {course.includes?.map((item, idx) => (
-                      <div key={idx} className="flex items-center gap-2">
-                        {item.icon}
-                        <span>{item.text}</span>
+          {/* Description - DARK MODE */}
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 md:p-8 mb-6 md:mb-8">
+            <h2 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 dark:text-white">Description</h2>
+            {course.description?.split('\n\n').map((para, idx) => (
+              <p key={idx} className="text-gray-700 dark:text-gray-300 mb-4 text-sm md:text-base">{para}</p>
+            ))}
+          </div>
+
+          {/* Instructors - DARK MODE */}
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 md:p-8 mb-6 md:mb-8">
+            <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 dark:text-white">Instructors</h2>
+            
+            {course.instructors?.map((instructor, idx) => (
+              <div key={idx} className="mb-6 md:mb-8 last:mb-0">
+                <h3 className="text-orange-600 dark:text-orange-400 text-base md:text-lg font-semibold">{instructor.name}</h3>
+                <p className="text-gray-600 dark:text-gray-400 text-xs md:text-sm mb-3 md:mb-4">{instructor.title}</p>
+                <div className="flex flex-col sm:flex-row items-start gap-4">
+                  <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-orange-400 to-blue-500 rounded-full flex-shrink-0 flex items-center justify-center text-white text-2xl md:text-3xl font-bold">
+                    {instructor.name.charAt(0)}
+                  </div>
+                  <div className="flex-1">
+                    <div className="grid grid-cols-2 gap-2 text-xs md:text-sm mb-3 md:mb-4">
+                      <div className="flex items-center gap-2 dark:text-gray-300">
+                        <Star className="w-3 h-3 md:w-4 md:h-4 text-yellow-400" />
+                        <span>{instructor.rating} Instructor Rating</span>
                       </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="mt-6 pt-6 border-t">
-                  <h4 className="font-semibold mb-3 text-gray-900">Special Features:</h4>
-                  <div className="space-y-2 text-sm text-gray-700">
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-green-600" />
-                      <span>98% Placement Support</span>
+                      <div className="flex items-center gap-2 dark:text-gray-300">
+                        <Award className="w-3 h-3 md:w-4 md:h-4" />
+                        <span>{instructor.reviewCount?.toLocaleString()} Reviews</span>
+                      </div>
+                      <div className="flex items-center gap-2 dark:text-gray-300">
+                        <Video className="w-3 h-3 md:w-4 md:h-4" />
+                        <span>{instructor.studentCount?.toLocaleString()} Students</span>
+                      </div>
+                      {instructor.courseCount && (
+                        <div className="flex items-center gap-2 dark:text-gray-300">
+                          <Play className="w-3 h-3 md:w-4 md:h-4" />
+                          <span>{instructor.courseCount} Courses</span>
+                        </div>
+                      )}
                     </div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-green-600" />
-                      <span>Industry Expert Instructors</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-green-600" />
-                      <span>Real Industrial Projects</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-green-600" />
-                      <span>Lifetime Doubt Solving</span>
-                    </div>
+                    <p className="text-gray-700 dark:text-gray-300 text-xs md:text-sm">
+                      {instructor.bio}
+                    </p>
                   </div>
                 </div>
               </div>
-            </div>
+            ))}
+          </div>
 
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h4 className="font-semibold mb-3 text-gray-900">Award-Winning Institute</h4>
-              <p className="text-sm text-gray-600 mb-4">
-                Maharashtra Udyog Bhushan Award 2022 Winner. Join 200+ successfully placed students.
-              </p>
-              <div className="text-sm space-y-2">
-                <div className="flex items-center gap-2 text-orange-600">
-                  <Phone className="w-4 h-4" />
-                  <span className="font-semibold">+91 7030999500</span>
+          {/* Reviews - DARK MODE */}
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 md:p-8 mb-6 md:mb-8">
+            <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
+              <Star className="w-6 h-6 md:w-8 md:h-8 text-yellow-400 fill-current" />
+              <h2 className="text-xl md:text-2xl font-bold dark:text-white">{course.rating} course rating • {course.reviews} ratings</h2>
+            </div>
+            <h3 className="font-semibold mb-4 md:mb-6 dark:text-white text-sm md:text-base">Student Reviews</h3>
+            
+            <div className="space-y-4 md:space-y-6">
+              <div className="border-b dark:border-gray-700 pb-4 md:pb-6">
+                <div className="flex items-start gap-3 md:gap-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-400 to-blue-500 rounded-full flex-shrink-0 flex items-center justify-center text-white font-bold text-sm md:text-base">
+                    R
+                  </div>
+                  <div className="flex-1">
+                    <span className="font-semibold dark:text-white text-sm md:text-base">Rahul P.</span>
+                    <div className="flex items-center gap-2 my-2">
+                      {[...Array(5)].map((_, i) => (<Star key={i} className="w-3 h-3 md:w-4 md:h-4 text-yellow-400 fill-yellow-400" />))}
+                      <span className="text-xs md:text-sm text-gray-600 dark:text-gray-400">2 weeks ago</span>
+                    </div>
+                    <p className="text-gray-700 dark:text-gray-300 text-xs md:text-sm">
+                      Excellent course by M CAD Solutions! The free preview videos helped me understand the teaching style. The instructors are industry experts and the practical projects really helped me. Got placed in a leading automotive company within 2 months. Highly recommended!
+                    </p>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2 text-orange-600">
-                  <Phone className="w-4 h-4" />
-                  <span className="font-semibold">+91 9096708490</span>
+              </div>
+
+              <div className="border-b dark:border-gray-700 pb-4 md:pb-6">
+                <div className="flex items-start gap-3 md:gap-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-400 to-blue-500 rounded-full flex-shrink-0 flex items-center justify-center text-white font-bold text-sm md:text-base">
+                    P
+                  </div>
+                  <div className="flex-1">
+                    <span className="font-semibold dark:text-white text-sm md:text-base">Priya S.</span>
+                    <div className="flex items-center gap-2 my-2">
+                      {[...Array(5)].map((_, i) => (<Star key={i} className="w-3 h-3 md:w-4 md:h-4 text-yellow-400 fill-yellow-400" />))}
+                      <span className="text-xs md:text-sm text-gray-600 dark:text-gray-400">1 month ago</span>
+                    </div>
+                    <p className="text-gray-700 dark:text-gray-300 text-xs md:text-sm">
+                      The course content is very well structured and covers everything from basics to advanced topics. The video thumbnails and descriptions helped me choose the right course. The lifetime access and doubt-solving support is a great feature!
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </main>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8 mt-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center text-sm text-gray-400">
-            © 2025 M CAD Solutions, Pune. All rights reserved. | NSDC Authorized Center
+        {/* Right Column - Sticky Card - DARK MODE */}
+        <div className="lg:w-96 lg:sticky lg:top-24 space-y-4 md:space-y-6 flex-shrink-0">
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden">
+            <div className="relative h-48 md:h-56 bg-gradient-to-br from-orange-500 to-blue-600 flex items-center justify-center">
+              <div className="text-center text-white p-6 md:p-8">
+                <h3 className="text-xl md:text-2xl font-bold mb-2">{course.title.split(' - ')[0]}</h3>
+                <p className="text-xs md:text-sm">{course.language} • {course.access}</p>
+              </div>
+            </div>
+            <div className="p-5 md:p-6">
+              <div className="mb-4">
+                <div className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">{course.price}</div>
+                <div className="text-gray-500 dark:text-gray-400 line-through text-sm md:text-base">{course.originalPrice}</div>
+                <div className="text-red-500 dark:text-red-400 font-semibold text-sm md:text-base">{course.discount}</div>
+              </div>
+              <div className="text-red-500 dark:text-red-400 text-xs md:text-sm font-semibold mb-4">⏰ Limited time offer!</div>
+              
+                <button 
+                  className="w-full bg-orange-600 text-white py-3 rounded font-semibold mb-2  opacity-70 text-sm md:text-base"
+                  onClick={() => router.push('https://web.classplusapp.com/login')}
+                >
+                  Enroll Now (Org Code : ECWYN)
+                </button>
+              
+              <button 
+                onClick={handleWhatsApp}
+                className="w-full bg-green-500 text-white py-3 rounded font-semibold hover:bg-green-600 transition mb-2 text-sm md:text-base"
+              >
+                Contact on WhatsApp
+              </button>
+              
+              <button 
+                onClick={handlePhoneCall}
+                className="w-full border border-gray-900 dark:border-gray-600 text-gray-900 dark:text-gray-200 py-3 rounded font-semibold hover:bg-gray-50 dark:hover:bg-gray-700 transition text-sm md:text-base"
+              >
+                Call: +91 91729 69859
+              </button>
+              
+              {/* <div className="text-center text-xs md:text-sm text-gray-500 dark:text-gray-400 mt-2">100% Money-Back Guarantee</div> */}
+
+              <div className="mt-4 md:mt-6">
+                <h4 className="font-semibold mb-3 text-gray-900 dark:text-white text-sm md:text-base">This course includes:</h4>
+                <div className="space-y-2 text-xs md:text-sm text-gray-700 dark:text-gray-300">
+                  {course.includes?.map((item, idx) => (
+                    <div key={idx} className="flex items-center gap-2">
+                      {item.icon}
+                      <span>{item.text}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-4 md:mt-6 pt-4 md:pt-6 border-t dark:border-gray-700">
+                <h4 className="font-semibold mb-3 text-gray-900 dark:text-white text-sm md:text-base">Special Features:</h4>
+                <div className="space-y-2 text-xs md:text-sm text-gray-700 dark:text-gray-300">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-green-600 dark:text-green-400" />
+                    <span>98% Placement Support</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-green-600 dark:text-green-400" />
+                    <span>Industry Expert Instructors</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-green-600 dark:text-green-400" />
+                    <span>Real Industrial Projects</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-green-600 dark:text-green-400" />
+                    <span>Lifetime Doubt Solving</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-5 md:p-6">
+            <h4 className="font-semibold mb-3 text-gray-900 dark:text-white text-sm md:text-base">Award-Winning Institute</h4>
+            <p className="text-xs md:text-sm text-gray-600 dark:text-gray-300 mb-4">
+              Maharashtra Udyog Bhushan Award 2022 Winner. Join 200+ successfully placed students.
+            </p>
+            <div className="text-xs md:text-sm space-y-2">
+              <div className="flex items-center gap-2 text-orange-600 dark:text-orange-400">
+                <Phone className="w-3 h-3 md:w-4 md:h-4" />
+                <span className="font-semibold">+91 91729 69859</span>
+              </div>
+              <div className="flex items-center gap-2 text-orange-600 dark:text-orange-400">
+                <Phone className="w-3 h-3 md:w-4 md:h-4" />
+                {/* <span className="font-semibold">+91 9096708490</span> */}
+              </div>
+            </div>
           </div>
         </div>
-      </footer>
-    </div>
-  );
+      </div>
+    </main>
+
+    {/* Footer - DARK MODE */}
+    <footer className="bg-gray-900 dark:bg-gray-950 text-white py-6 md:py-8 mt-8 md:mt-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center text-xs md:text-sm text-gray-400">
+          © 2025 M CAD Solutions, Pune. All rights reserved. | NSDC Authorized Center
+        </div>
+      </div>
+    </footer>
+  </div>
+);
+
 }
 
 

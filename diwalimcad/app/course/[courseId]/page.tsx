@@ -96,7 +96,7 @@ const coursesData: CoursesData = {
         bio: 'Our expert instructors bring over 13 years of automotive industry experience in CATIA V5 design and development. Specialized in training mechanical engineers for core industry roles with hands-on project-based learning approach.'
       }
     ],
-    price: '₹4,999',
+    price: '₹2,499',
     originalPrice: '₹9,999',
     discount: '50% OFF',
     lastUpdated: '10/2025',
@@ -486,7 +486,7 @@ You'll learn everything from basic sketching to advanced surface modeling, prepa
     bestseller: false,
     instructors: [
       {
-        name: 'Vaishnavi Gore',
+        name: 'Manoj Potdar',
         title: 'BIW Design Specialist - Automotive Industry Expert',
         rating: 4.9,
         reviewCount: 89,
@@ -909,7 +909,7 @@ The course includes comprehensive coverage of all fixture types: rest units, cla
     bestseller: false,
     instructors: [
       {
-        name: 'M CAD Solutions Engineering Team',
+        name: 'Vaishnavi Gore',
         title: '2D Drafting Specialists - Automotive Fixtures',
         rating: 4.8,
         reviewCount: 92,
@@ -1227,7 +1227,7 @@ The course covers complete drafting workflow from detail drawings to assembly do
   rating: 4.6,
   reviews: 203,
   students: 1450,
-  price: '₹4,999',
+  price: '₹2,499',
   originalPrice: '₹9,999',
   discount: '50% OFF',
   lastUpdated: '10/2025',
@@ -1823,9 +1823,21 @@ return (
             <a href={course.youtubeChannel} target="_blank" rel="noopener noreferrer" className="hover:text-gray-300 text-xs md:text-sm hidden sm:inline">
               Free Videos
             </a>
-            <button onClick={handlePhoneCall} className="border border-white px-3 py-1.5 md:px-4 md:py-2 rounded hover:bg-gray-800 text-xs md:text-sm">
-              +91 9172969859
-            </button>
+           <button
+  onClick={handlePhoneCall}
+  className="flex items-center gap-2 border border-white px-3 py-1.5 md:px-4 md:py-2 rounded hover:bg-gray-800 text-xs md:text-sm"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="w-4 h-4 md:w-5 md:h-5"
+    fill="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path d="M22.707 16.081l-4.194-1.797a1 1 0 0 0-1.021.147l-2.548 2.068a16.091 16.091 0 0 1-7.437-7.437l2.068-2.548a1 1 0 0 0 .147-1.021L7.925 1.293A1 1 0 0 0 6.87.675L2.935 1.623a1 1 0 0 0-.777.972c.003 11.046 8.946 19.989 19.992 19.992a1 1 0 0 0 .972-.777l.948-3.935a1 1 0 0 0-.363-.794z" />
+  </svg>
+  +91 9172969859
+</button>
+
             <button className="bg-orange-600 text-white px-4 py-1.5 md:px-6 md:py-2 rounded   text-xs md:text-sm">
               Enroll Now (Org Code : ECWYN)
             </button>
@@ -1967,13 +1979,13 @@ return (
                                 )}
                                 {lesson.free && lesson.videoId && lesson.thumbnail && (
                                   <div className="mt-2">
-                                    <Image 
-                                      src={lesson.thumbnail} 
+                                    {/* <Image
+                                      src={lesson.thumbnail}
                                       alt={lesson.title}
                                       width={320}
                                       height={180}
                                       className="w-full max-w-xs rounded border border-gray-200 dark:border-gray-600 hover:border-orange-400 dark:hover:border-orange-400 transition"
-                                    />
+                                    /> */}
                                   </div>
                                 )}
                               </div>
@@ -1989,26 +2001,7 @@ return (
             </div>
 
             {/* YouTube Channel Link - DARK MODE */}
-            {course.youtubeChannel && (
-              <div className="mt-4 md:mt-6 p-3 md:p-4 bg-orange-50 dark:bg-orange-900/20 rounded-lg border border-orange-200 dark:border-orange-800">
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-                  <Video className="w-5 h-5 md:w-6 md:h-6 text-orange-600 dark:text-orange-400 flex-shrink-0" />
-                  <div className="flex-1">
-                    <p className="font-semibold text-gray-900 dark:text-white text-sm md:text-base">Want more free content?</p>
-                    <p className="text-xs md:text-sm text-gray-600 dark:text-gray-300">Subscribe to our YouTube channel for more tutorials</p>
-                  </div>
-                  <a
-                    href={course.youtubeChannel}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-orange-600 text-white px-3 md:px-4 py-2 rounded hover:bg-orange-700 transition text-xs md:text-sm font-semibold flex items-center gap-2 w-full sm:w-auto justify-center"
-                  >
-                    <ExternalLink className="w-3 h-3 md:w-4 md:h-4" />
-                    YouTube Channel
-                  </a>
-                </div>
-              </div>
-            )}
+            
           </div>
 
           {/* Requirements - DARK MODE */}
@@ -2122,12 +2115,37 @@ return (
         {/* Right Column - Sticky Card - DARK MODE */}
         <div className="lg:w-96 lg:sticky lg:top-24 space-y-4 md:space-y-6 flex-shrink-0">
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden">
-            <div className="relative h-48 md:h-56 bg-gradient-to-br from-orange-500 to-blue-600 flex items-center justify-center">
-              <div className="text-center text-white p-6 md:p-8">
-                <h3 className="text-xl md:text-2xl font-bold mb-2">{course.title.split(' - ')[0]}</h3>
-                <p className="text-xs md:text-sm">{course.language} • {course.access}</p>
-              </div>
-            </div>
+            <div className="relative h-48 md:h-56 bg-gradient-to-br from-orange-500 to-blue-600 flex items-center justify-center overflow-hidden">
+  {/* Course Image */}
+  <div className="absolute inset-0">
+    <Image
+      src={
+        courseId === 'catia-v5-english' ? '/catiaveng.png' :
+        courseId === 'catia-v5-marathi' ? '/catiav5marathi.png' :
+        courseId === 'biw-fixture-3d-english' ? '/biwfixture.png' :
+        courseId === 'biw-fixture-2d-english' ? '/biwfixture2d.png' :
+        '/catiaveng.png' // default fallback
+      }
+      alt={course.title}
+      fill
+      className="object-cover opacity-80"
+      priority
+    />
+    {/* Gradient Overlay */}
+    {/* <div className="absolute inset-0 bg-gradient-to-br from-orange-500/50 to-blue-600/50"></div> */}
+  </div>
+  
+  {/* Text Content */}
+  <div className="relative z-10 text-center text-white p-6 md:p-8">
+    <h3 className="text-xl md:text-2xl font-bold mb-2 drop-shadow-lg">
+      {/* {course.title.split(' - ')[0]} */}
+    </h3>
+    <p className="text-xs md:text-sm drop-shadow-md">
+      {/* {course.language} • {course.access} */}
+    </p>
+  </div>
+</div>
+
             <div className="p-5 md:p-6">
               <div className="mb-4">
                 <div className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">{course.price}</div>
@@ -2207,7 +2225,7 @@ return (
               </div>
               <div className="flex items-center gap-2 text-orange-600 dark:text-orange-400">
                 <Phone className="w-3 h-3 md:w-4 md:h-4" />
-                {/* <span className="font-semibold">+91 9096708490</span> */}
+                <span className="font-semibold">+91 9096708490</span>
               </div>
             </div>
           </div>

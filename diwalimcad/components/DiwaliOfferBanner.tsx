@@ -56,6 +56,20 @@
 //           FLAT 50% OFF | Use Code: <span className="bg-white text-red-600 px-3 py-1 rounded-lg mx-2">MCAD50</span>
 //         </p>
         
+//         {/* Organizational Code */}
+//         <div className="mb-2">
+//           <p className="text-sm font-semibold mb-1 flex items-center justify-center">
+//             <span className="text-yellow-300 mr-1">⚠️ Important:</span> 
+//             Organizational Code Required for Login
+//           </p>
+//           <div className="flex items-center justify-center">
+//             <span className="text-sm font-semibold mr-2">Use Code:</span>
+//             <span className="bg-green-600 text-white px-2 py-1 rounded-md font-bold text-lg border-2 border-yellow-300">
+//               ECWYN
+//             </span>
+//           </div>
+//         </div>
+        
 //         {/* Countdown Timer */}
 //         <div className="flex justify-center items-center space-x-4 mb-2">
 //           <span className="text-sm font-semibold">Offer ends in:</span>
@@ -103,8 +117,6 @@
 // };
 
 // export default DiwaliOfferBanner;
-
-
 import { useState, useEffect } from 'react';
 
 interface TimeLeft {
@@ -115,36 +127,40 @@ interface TimeLeft {
 
 const DiwaliOfferBanner = () => {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
-    hours: 48,
+    hours: 0,
     minutes: 0,
     seconds: 0
   });
 
   useEffect(() => {
+    // Check if end time exists in localStorage
+    let endTime = localStorage.getItem('diwaliOfferEndTime');
+    
+    if (!endTime) {
+      // If no end time exists, set it to 48 hours from now
+      const now = new Date().getTime();
+      const targetTime = now + (48 * 60 * 60 * 1000); // 48 hours in milliseconds
+      localStorage.setItem('diwaliOfferEndTime', targetTime.toString());
+      endTime = targetTime.toString();
+    }
+
     const timer = setInterval(() => {
-      setTimeLeft(prevTime => {
-        let { hours, minutes, seconds } = prevTime;
+      const now = new Date().getTime();
+      const difference = parseInt(endTime!) - now;
+
+      if (difference <= 0) {
+        // When countdown reaches 0, reset to 48 hours
+        const newEndTime = new Date().getTime() + (48 * 60 * 60 * 1000);
+        localStorage.setItem('diwaliOfferEndTime', newEndTime.toString());
+        setTimeLeft({ hours: 48, minutes: 0, seconds: 0 });
+      } else {
+        // Calculate remaining time
+        const hours = Math.floor(difference / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
         
-        if (seconds === 0) {
-          if (minutes === 0) {
-            if (hours === 0) {
-              // Reset to 48 hours when countdown ends
-              return { hours: 48, minutes: 0, seconds: 0 };
-            } else {
-              hours--;
-              minutes = 59;
-              seconds = 59;
-            }
-          } else {
-            minutes--;
-            seconds = 59;
-          }
-        } else {
-          seconds--;
-        }
-        
-        return { hours, minutes, seconds };
-      });
+        setTimeLeft({ hours, minutes, seconds });
+      }
     }, 1000);
 
     return () => clearInterval(timer);

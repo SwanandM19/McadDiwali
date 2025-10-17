@@ -1617,7 +1617,7 @@ const Landing: React.FC = () => {
       desc: 'Master CATIA V5 from scratch - Part Design, Assembly, Drafting & Surface Modeling',
       price: '₹2,499',
       original: '₹9,999',
-      discount: '50% OFF',
+      discount: '75% OFF',
       videos: '13 Videos',
       duration: 'Lifetime Access',
       image: '/catiaveng.png' // <-- local image from public folder
@@ -1650,7 +1650,7 @@ const Landing: React.FC = () => {
       desc: 'Industrial-based training in Marathi - Sketcher, Part Modelling, Assembly & Drafting',
       price: '₹2,499',
       original: '₹9,999',
-      discount: '50% OFF',
+      discount: '75% OFF',
       videos: '13 Videos',
       duration: '1 Year Access',
       image: '/catiav5marathi.png'

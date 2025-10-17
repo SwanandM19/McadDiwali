@@ -1835,10 +1835,11 @@ return (
   >
     <path d="M22.707 16.081l-4.194-1.797a1 1 0 0 0-1.021.147l-2.548 2.068a16.091 16.091 0 0 1-7.437-7.437l2.068-2.548a1 1 0 0 0 .147-1.021L7.925 1.293A1 1 0 0 0 6.87.675L2.935 1.623a1 1 0 0 0-.777.972c.003 11.046 8.946 19.989 19.992 19.992a1 1 0 0 0 .972-.777l.948-3.935a1 1 0 0 0-.363-.794z" />
   </svg>
-  +91 9172969859
+  Call now
 </button>
 
-            <button className="bg-orange-600 text-white px-4 py-1.5 md:px-6 md:py-2 rounded   text-xs md:text-sm">
+            <button className="bg-orange-600 text-white px-4 py-1.5 md:px-6 md:py-2 rounded   text-xs md:text-sm"
+            onClick={() => router.push('https://web.classplusapp.com/login')}>
               Enroll Now (Org Code : ECWYN)
             </button>
           </div>
@@ -2216,16 +2217,20 @@ return (
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-5 md:p-6">
             <h4 className="font-semibold mb-3 text-gray-900 dark:text-white text-sm md:text-base">Award-Winning Institute</h4>
             <p className="text-xs md:text-sm text-gray-600 dark:text-gray-300 mb-4">
-              Maharashtra Udyog Bhushan Award 2022 Winner. Join 200+ successfully placed students.
+              Maharashtra Udyog Bhushan Award 2022 Winner. Join 255+ successfully placed students.
             </p>
             <div className="text-xs md:text-sm space-y-2">
               <div className="flex items-center gap-2 text-orange-600 dark:text-orange-400">
                 <Phone className="w-3 h-3 md:w-4 md:h-4" />
-                <span className="font-semibold">+91 91729 69859</span>
+                  <button >
+                <span className="font-semibold" onClick={handlePhoneCall}>+91 91729 69859</span>
+                </button>
+               
               </div>
               <div className="flex items-center gap-2 text-orange-600 dark:text-orange-400">
-                <Phone className="w-3 h-3 md:w-4 md:h-4" />
-                <span className="font-semibold">+91 9096708490</span>
+                <Phone className="w-3 h-3 md:w-4 md:h-4"  />
+                <span className="font-semibold" onClick={handlePhoneCall}>+91 9096708490</span>
+              
               </div>
             </div>
           </div>

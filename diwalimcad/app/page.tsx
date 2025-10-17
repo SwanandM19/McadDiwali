@@ -2488,47 +2488,70 @@ const Landing: React.FC = () => {
             {/* Combo Courses - DARK MODE */}
             <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 dark:text-white">Combo Packages</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-              {comboCourses.map((combo, idx) => (
-                <div
-                  key={idx}
-                  className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow border-2 border-orange-200 dark:border-orange-800 cursor-pointer"
-                >
-                  <div className="h-60 md:h-82 relative">
-                    <Image
-                      src={combo.image}
-                      alt={combo.title}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="p-5 md:p-6">
-                    <div className="bg-orange-600 text-white text-xs font-bold px-3 py-1 rounded inline-block mb-3">
-                      BEST VALUE • {combo.discount}
-                    </div>
-                    <h3 className="font-bold text-lg md:text-xl mb-2 dark:text-white">{combo.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-300 text-xs md:text-sm mb-4">{combo.desc}</p>
-                    <div className="flex items-baseline gap-3 mb-4">
-                      <span className="text-2xl md:text-3xl font-bold text-orange-600 dark:text-orange-400">{combo.price}</span>
-                      <span className="text-gray-400 dark:text-gray-500 line-through text-base md:text-lg">{combo.original}</span>
-                    </div>
-                    <button
-                      onClick={(e) => {
-                        if (combo.id === 'catia-biw-english') {
-                          e.stopPropagation();
-                          router.push('https://web.classplusapp.com/store/course/285654?section=overview');
-                        } else {
-                          e.stopPropagation();
-                          router.push('https://web.classplusapp.com/store/course/287042?section=overview');
-                        }
-                      }}
-                      className="w-full bg-orange-600 text-white py-2 md:py-3 rounded-md hover:bg-orange-700 transition font-bold text-sm md:text-base"
-                    >
-                      View Combo Details
-                    </button>
-                  </div>
-                </div>
-              ))}
-            </div>
+  {comboCourses.map((combo, idx) => (
+    <div
+      key={idx}
+      className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow border-2 border-orange-200 dark:border-orange-800 cursor-pointer"
+    >
+      <div className="h-60 md:h-82 relative">
+        <Image
+          src={combo.image}
+          alt={combo.title}
+          fill
+          className="object-cover"
+        />
+      </div>
+
+      <div className="p-5 md:p-6">
+        <div className="bg-orange-600 text-white text-xs font-bold px-3 py-1 rounded inline-block mb-3">
+          BEST VALUE • {combo.discount}
+        </div>
+
+        <h3 className="font-bold text-lg md:text-xl mb-2 dark:text-white">
+          {combo.title}
+        </h3>
+
+        <p className="text-gray-600 dark:text-gray-300 text-xs md:text-sm mb-4">
+          {combo.desc}
+        </p>
+
+        <div className="flex items-baseline gap-3 mb-4">
+          <span className="text-2xl md:text-3xl font-bold text-orange-600 dark:text-orange-400">
+            {combo.price}
+          </span>
+          <span className="text-gray-400 dark:text-gray-500 line-through text-base md:text-lg">
+            {combo.original}
+          </span>
+        </div>
+
+        {/* 🔶 Highlighted Org Code & Offer Coupon Section */}
+        <div className="bg-orange-50 dark:bg-orange-900/30 border border-orange-300 dark:border-orange-700 rounded-md p-3 mb-4">
+          <p className="text-sm md:text-base font-semibold text-gray-800 dark:text-gray-200">
+            <span className="text-orange-700 dark:text-orange-400 font-bold">Org Code:</span> ECWYN
+          </p>
+          <p className="text-sm md:text-base font-semibold text-gray-800 dark:text-gray-200">
+            <span className="text-orange-700 dark:text-orange-400 font-bold">Offer Coupon:</span> <span className="bg-orange-600 text-white px-2 py-0.5 rounded-md">MCAD50</span>
+          </p>
+        </div>
+
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            if (combo.id === "catia-biw-english") {
+              router.push("https://web.classplusapp.com/store/course/285654?section=overview");
+            } else {
+              router.push("https://web.classplusapp.com/store/course/287042?section=overview");
+            }
+          }}
+          className="w-full bg-orange-600 text-white py-2 md:py-3 rounded-md hover:bg-orange-700 transition font-bold text-sm md:text-base"
+        >
+          View Combo Details
+        </button>
+      </div>
+    </div>
+  ))}
+</div>
+
           </>
         ) : showCourseMode === 'offline' && !hasFilledOfflineForm ? (
           <>

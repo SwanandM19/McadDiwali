@@ -2589,24 +2589,22 @@ const Landing: React.FC = () => {
                     className="px-4 py-2 border dark:border-gray-600 rounded bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 text-sm md:text-base"
                     required
                   />
-                  <input
-                    name="qualification"
-                    type="text"
-                    placeholder="Course"
-                    className="px-4 py-2 border dark:border-gray-600 rounded bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 text-sm md:text-base"
-                  />
-                </div>
+                 <input
+  name="qualification"
+  type="text"
+  list="course-options"
+  placeholder="Course"
+  className="px-4 py-2 border dark:border-gray-600 rounded bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 text-sm md:text-base"
+/>
 
-                {/* <select
-                name="batchpreference"
-                className="w-full mb-4 px-4 py-2 border dark:border-gray-600 rounded bg-white dark:bg-gray-700 text-gray-900 dark:text-white text-sm md:text-base"
-                required
-              >
-                <option value="">Select Batch Timing</option>
-                <option>Weekday Morning (10 AM - 1 PM)</option>
-                <option>Weekday Evening (6 PM - 9 PM)</option>
-                <option>Weekend Saturday (10 AM - 5 PM)</option>
-              </select> */}
+<datalist id="course-options">
+  <option value="CATIA V5 - English" />
+  <option value="BIW Fixture Design - 3D (English)" />
+  <option value="BIW Fixture Design - 2D Drafting (English)" />
+  <option value="CATIA V5 (Marathi)" />
+</datalist>
+
+                </div>
 
                 <textarea
                   name="message"
